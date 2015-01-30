@@ -17,15 +17,25 @@
   </head>
   <body>
     <h2>this is my body</h2>
-  <ul>
-    <% for(var i=0; i<potluck.length; i++) {%>
-       <li><%= potluck[i] %></li>
-    <% } %>
-  </ul>
-<ul>
-    <% items.forEach(function(item) { %>
-        <li><%= item.name %></li>
-    <% }); %>
-</ul>
+
+    <ul>
+      <h2><%= title %></h2>
+      <% for(var i=0; i<users.length; i++) {%>
+         <li><%= users[i].username %> - has id: <%= users[i].id %>
+          <form action="/postgres/delete/<%= users[i].id %>" method="get" accept-charset="utf-8">
+            <input type="submit" name="submit" value="delete">
+          </form>
+            <form action="/postgres/update/<%= users[i].id %>" method="get" accept-charset="utf-8">
+            <input type="text" name="updateName" value="" placeholder="update username">
+            <input type="submit" name="submit" value="update">
+          </form>
+         </li> 
+      <% } %>
+    </ul>
+    <form action="/postgres/create" method="post" accept-charset="utf-8">
+      <input type="type" name="student_name" value="" placeholder="input student name">
+      <input type="submit" name="submit" value="Submit">
+    </form>
+
   </body>
 </html>  
