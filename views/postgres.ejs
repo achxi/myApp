@@ -22,7 +22,7 @@
       <h2><%= title %></h2>
       <% for(var i=0; i<users.length; i++) {%>
          <li><%= users[i].username %> - has id: <%= users[i].id %>
-          <form action="/postgres/delete/<%= users[i].id %>" method="get" accept-charset="utf-8">
+          <form action="/postgres/<%= users[i].id %>" method="delete" accept-charset="utf-8">
             <input type="submit" name="submit" value="delete">
           </form>
             <form action="/postgres/update/<%= users[i].id %>" method="get" accept-charset="utf-8">
