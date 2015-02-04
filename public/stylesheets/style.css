@@ -71,10 +71,10 @@ ul.sidebar li.left-nav {
 ul.sidebar li.left-nav a {
 	color: black;
 }
-h3.myPanel {
+/* h3.myPanel {
 	text-align: center;
 	font-size: 15px;
-}
+} */
 /*footer*/
 footer-fluid {
 	background-color: #242221;
@@ -82,4 +82,8 @@ footer-fluid {
 .myImg {
 	width: 10%;
 	height: 30px;
+}
+/*map*/
+#map {
+	height: 180px;
 }

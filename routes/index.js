@@ -74,4 +74,8 @@ router.get('/bootstrap', function(req, res) {
   res.render('bootstrap');
 });
 
+router.get('/leaflet', function(req, res) {
+  res.render('leaflet');
+});
+
 module.exports = router;
