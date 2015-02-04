@@ -16,6 +16,7 @@
   map.fitBounds(group.getBounds()); 
 });*/
 
+//https://a.tiles.mapbox.com/v3/examples.map-i875mjb7/12/2049/1362.png
 
 $(window).ready(function() {
 
@@ -47,7 +48,6 @@ $(window).ready(function() {
       [51.51, -0.047]
     ]).addTo(map).bindPopup("I am a polygon.");
 
-
     var popup = L.popup();
 
     function onMapClick(e) {
@@ -61,6 +61,23 @@ $(window).ready(function() {
 
 //////////////////////////////////////////////////////////////////////
 
+  var myStyle = {
+    "color": "#ff7800",
+    "weight": 10,
+    "opacity": 0.9
+};
+
+  var myLines = [{
+      "type": "LineString",
+      // "coordinates": [[51.5, -0.09], [51.510, -0.227], [70.515, -0.33]]
+      "coordinates": [[-0.09, 51.5], [-0.227, 51.510], [-0.33, 70.515]] // ***WARN: geoJson [lon, lat], leaflet [lat, lon]
+  }];
+
+  L.geoJson(myLines, {
+      style: myStyle
+  }).addTo(map);
+
+//////////////////////////////////////////////////////////////////////
 /*  var geoObj = {
     "type": "Features",
     "properties":{
@@ -73,7 +90,57 @@ $(window).ready(function() {
       "coordinates": [51.55, -0.052]
     }
   };
-  L.geoJson(geoObj).addTo(map);*/
+  L.geoJson(geoObj).addTo(map);
+  var dataLayer = L.geoJson(geoObj).addTo(map);
+  // dataLayer.addData(someGeoJsonObj); // dataLayer is an empty object when add to map;*/
+  
+/*  var states = [{
+    "type": "Feature",
+    "properties": {"party": "Republican"},
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+            [51.509, -0.08],
+            [51.503, -0.06],
+            [51.51, -0.047],
+            [51.51, -0.030]
+        ]]
+    }
+}, {
+    "type": "Feature",
+    "properties": {"party": "Democrat"},
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+            [51.509, -0.10],
+            [51.503, -0.12],
+            [51.51, -0.07],
+            [51.51, -0.032]
+        ]]
+    }
+}]; //states is an array which contain an object => because L.geoJson need it in this format*/
 
+/*var myStyle = {
+    "color": "#ff7800",
+    "weight": 5,
+    "opacity": 0.9
+};
+
+L.geoJson(states, {
+    style: myStyle
+}).addTo(map);
+
+
+  var myLines = [{
+      "type": "LineString",
+      "coordinates": [[51.505, -0.09], [51.510, -0.14], [70.515, -0.19]]
+  }, {
+    "type": "LineString",
+    "coordinates": [[51.505, -0.09], [59.505, -0.19], [51.505, -9.29]]
+}];
+
+  L.geoJson(myLines, {
+      style: myStyle
+  }).addTo(map);*/
 
 });
