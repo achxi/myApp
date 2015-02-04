@@ -46,7 +46,7 @@ router.post('/postgres/create', function(req, res) {
   });
 });
 
-router.delete('/postgres/:id', function(req, res) {
+router.post('/postgres/:id', function(req, res) {
   models.Student.find({
     where: {id: req.param('id')}
   }).then(function(mem) {
