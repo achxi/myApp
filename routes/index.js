@@ -78,4 +78,8 @@ router.get('/leaflet', function(req, res) {
   res.render('leaflet');
 });
 
+router.get('/knockout', function(req, res) {
+  res.render('knockout');
+});
+
 module.exports = router;
