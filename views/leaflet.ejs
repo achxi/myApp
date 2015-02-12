@@ -3,6 +3,9 @@
     <title>Leaflet is here</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/leaflet.css" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+    <link rel="stylesheet" href="/stylesheets/font-awesome.css" />
+    <link rel="stylesheet" href="/stylesheets/durandal.css" />
     <script src="/javascripts/jquery.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
     <script src="/javascripts/leaflet.js"></script>
@@ -17,13 +20,20 @@
     <main>
         <div class="container">
             <h1>this is leaflet using ejs template</h1>
+            <form action="/users/create" method="post" accept-charset="utf-8">
+                <input type="text" name="username" value="" placeholder="Your username">
+                <input type="text" name="longtitude" value="" placeholder="Your longtitude ">
+                <input type="text" name="latitude" value="" placeholder="Your latitude">
+                <input type="submit" name="submit" value="Submit">
+            </form>
             <div id="map"></div>
+            <div id="applicationHost"></div>
         </div>
     </main>
 
     <footer>
         <h2>this is my footer</h2>
     </footer>
-    
+    <script src="/javascripts/require/require.js" data-main="javascripts/main"></script>
 </body>
 </html>

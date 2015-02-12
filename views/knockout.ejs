@@ -4,15 +4,49 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>knockout is here</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script src="/javascripts/jquery.js" type="text/javascript" charset="utf-8" defer></script>
+	<script src="/knockout/dist/knockout.js" type="text/javascript" charset="utf-8" defer></script>
+	<script src="/javascripts/myKO.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 <body>
 	<h3>knockout is here</h3>
-	<p>First name: <strong data-bind="text: firstName"></strong></p>
-	<p>Last name: <strong data-bind="text: lastName"></strong></p>
+<!-- 	<p>First name: <strong data-bind="text: firstName"></strong></p>
+<p>Last name: <strong data-bind="text: lastName"></strong></p> -->
 	
-	<script src="/knockout/dist/knockout.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="/javascripts/myKO.js" type="text/javascript" charset="utf-8" async defer></script>
+<!-- <table border="1px solid black">
+	<caption>myTable</caption>
+	<thead>
+		<tr>
+			<th>passenger name</th>
+			<th>meal</th>
+			<th>surCharge</th>
+			<th>availableMeals</th>
+			<th>formattedPrice</th>
+			<th>removeSeat</th>
+		</tr>
+	</thead>
+	<tbody data-bind="foreach: seats">
+		<tr>
+			<td data-bind="text: name"></td>
+			<td data-bind="text: meal().mealName"></td>
+			<td data-bind="text: meal().price"></td>
+			<td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
+			<td data-bind="text: formattedPrice"></td>
+			<td><a href="#" data-bind="click: $root.removeSeat">remove Seat</a></td>
+		</tr>
+	</tbody>
+</table>
+<h3 data-bind="visible: totalCharge() > 0">
+	<span data-bind="text: totalCharge().toFixed(2)"></span>
+</h3>
+<button data-bind="click: addSeat">Reverve another seat</button> -->
 	
+<ul class="folders" data-bind="foreach: folders">
+	<li data-bind="text: $data, 
+               css: { selected: $data == $root.chosenFolderId() },
+               click: $root.goToFolder"></li>
+</ul>
+
 </body>
 </html>

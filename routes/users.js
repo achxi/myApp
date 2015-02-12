@@ -22,15 +22,15 @@ router.get('/', function(req, res, next) {
 router.post('/create', function(req, res, next) {
 	console.log('Create new user');
 	var newUser = {
-		username : 'blabla',
+		username : 'hih',
 		food : 'myFood',
 		confirm : 'myConfirm',
-		longtitude : 'mylongtitude',
-		latittude : 'mylatittude'
+		longtitude : '15.5',
+		latittude : '2.8'
 	};
 	userDAO.createNewUser(newUser, function(err, newUser) {
-		// res.redirect('/users');
 		console.log(newUser);
+		res.redirect('/users');
 	});
 });
 
