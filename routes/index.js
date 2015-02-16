@@ -1,6 +1,7 @@
 var models  = require('../models');
 var express = require('express');
 var router  = express.Router();
+var userDAO = require('../dao/userDAO');
 
 router.get('/', function(req, res) {
   models.User.findAll({
@@ -39,6 +40,7 @@ router.get('/postgres', function(req, res) {
 
 
 router.post('/postgres/create', function(req, res) {
+  console.log(req.param);
   models.Student.create({
     username: req.param('student_name')
   }).then(function() {
@@ -75,7 +77,14 @@ router.get('/bootstrap', function(req, res) {
 });
 
 router.get('/leaflet', function(req, res) {
-  res.render('leaflet');
+  console.log('list all users');
+  userDAO.getAllUsers(function(err, users) {
+    var printOut = {
+      users: users
+    };
+    res.render('leaflet', {'users' : users});
+  });
+  // res.render('leaflet');
 });
 
 router.get('/knockout', function(req, res) {

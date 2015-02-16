@@ -26,6 +26,11 @@
                 <input type="text" name="latitude" value="" placeholder="Your latitude">
                 <input type="submit" name="submit" value="Submit">
             </form>
+
+            <% for(var i=0; i<users.length; i++) {%>
+                <li><b>username</b> <%= users[i].username %> - <b>id:</b><%= users[i].id %> - <b>food:</b> <%= users[i].food %> - <b>confirm:</b> <%= users[i].confirm %> - <b>longtitude:</b> <%= users[i].longtitude| 0 %> - <b>latitude:</b> <%= users[i].latitude| 0 %></li>
+            <% } %>
+
             <div id="map"></div>
             <div id="applicationHost"></div>
         </div>
